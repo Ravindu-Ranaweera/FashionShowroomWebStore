@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {margin:0;font-family:Arial}
+#logo {
+    display: block;
+    padding: 0 30px;
+    float: left;
+    font-size:20px;
+    line-height: 60px;
+}
+
+#logo img{
+
+    width: 300px;
+    height: 100px;
+}
+
+.topnav {
+  overflow: hidden;
+ /* background-color: whit;*/
+}
+
+.topnav a {
+    margin-top: 20px;
+  float: left;
+  font-weight: bold;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/*.active {
+  background-color: #4CAF50;
+  color: white;
+}*/
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+     margin-top: 20px;
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-weight: bold;
+  font-size: 20px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 20px 20px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  /*background-color: #555;*/
+  color: #DC143C;
+  font-size: 22px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.heder-right{
+    float: right;
+    margin-right: 20px;
+}
+
+.slideshow{
+    height: 350px;
+    overflow:hidden;
+    display: inline-grid;
+    z-index: -1;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  height: auto;
+  padding: 5px;
+}
+.row-slide{
+    float: left;
+}
+.column img{
+    height: 400px;
+    width: 100%;
+    
+}
+Clearfix (clear floats) 
+.row-slide::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.item-panel{
+    width: 80%;
+    /*display: inline-grid;*/
+    margin-left: 100px;
+    margin-right: 100px;
+    margin: 0 auto;
+    align: center;;
+}
+.item-panel-2{
+    width: 80%;
+/*    display: block;
+*/    margin-left: 100px;
+    margin-right: 100px;
+    margin: 0 auto;
+    align: center;;
+}
+.item-panel-3{
+    width: 80%;
+/*    display: block;
+*/    margin-left: 100px;
+    margin-right: 100px;
+    margin: 0 auto;
+    align: center;;
+}
+.container {
+    
+  position: relative;
+  width: 25%;
+  padding: 20px 20px;
+  align-items: center;
+  float: left;
+}
+.container img{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+     
+}
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #ff0000;
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.item-name {
+    font-family:  sans-serif;
+    text-align: center;
+    padding: 15px;
+    color: #000080;
+    font-size: 12px;
+    /*background-color: #D2B48C;*/
+}
+.price{
+    font-family:  sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 18px;
+    /*background-color: #D2B48C;*/
+   
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #333;
+  height: 3px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  /*text-decoration: underline;*/
+}
+
+.footer-distributed{
+    background: #111026;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+    width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span{
+    color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+  font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+    color:  #222;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+    width: 35%;
+}
+
+.footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+
+}
+
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+  font-weight:400;
+    vertical-align: middle;
+    margin:0;
+}
+
+.footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+    color:  lightseagreen;
+    text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #fff;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    line-height: 33px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+.footer-distributed .footer-icons a:hover{
+    background-color:#eda642;
+    border: 1px solid white; 
+
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+    .footer-distributed{
+        font: bold 14px sans-serif;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i{
+        margin-left: 0;
+    }
+
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+    <img src="img/logo2.png" alt="">
+</div>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Cloth</a>
+      <a href="#">Sunglases</a>
+      <a href="#">Watch</a>
+      <a href="#">Handbags</a>
+      <a href="#">Shoes</a>
+    </div>
+  </div> 
+  <a href="#men">Men</a>
+  <a href="#women">Women</a>
+  <a href="#news">About</a>
+  <a href="#contact">Contact</a>
+  <div class="heder-right">
+     <a href="#login">LogIn</a>
+  <a href="#cart">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a> 
+  </div> 
+  
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+    </header>
+
+
+<div class="slideshow cycle-slideshow"
+data-cycle-fx="fade" 
+    data-cycle-timeout="3000"
+    data-cycle-slides="> div"
+>
+    <div class="row-slide">
+        <div class="column">
+            <img src="img/1.jpg" alt="Snow" >
+        </div>
+        <div class="column">
+            <img src="img/2.jpg" alt="Forest" >
+        </div>
+        <div class="column">
+            <img src="img/3.jpg" alt="Mountains" >
+        </div>
+    </div>
+    <div class="row-slide">
+        <div class="column">
+            <img src="img/4.jpg" alt="Snow" >
+        </div>
+        <div class="column">
+            <img src="img/5.jpg" alt="Forest" >
+        </div>
+        <div class="column">
+            <img src="img/6.jpg" alt="Mountains" >
+        </div>
+    </div>
+    <div class="row-slide">
+        <div class="column">
+            <img src="img/7.jpg" alt="Snow" >
+        </div>
+        <div class="column">
+            <img src="img/8.jpg" alt="Forest" >
+        </div>
+        <div class="column">
+            <img src="img/9.jpg" alt="Mountains" >
+        </div>
+    </div>
+</div>
+
+<section><p>Trending Now</p></section>
+    <div class="item-panel">
+    
+    <div class="container">
+      <img src="img/50.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="img/50.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/50.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/50.jpg" alt="Avatar" class="image">
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+
+</div>
+
+<div class="item-panel-3">
+    
+    <div class="container">
+      <img src="img/52.jpg" alt="Avatar" class="image" >
+      <div class="item-name">CHECK SHIRT</div>
+      <div class="price">LKR 1250.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="img/52.jpg" alt="Avatar" class="image" >
+     <div class="item-name">CHECK SHIRT</div>
+      <div class="price">LKR 1250.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/52.jpg" alt="Avatar" class="image" >
+     <div class="item-name">CHECK SHIRT</div>
+      <div class="price">LKR 1250.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/52.jpg" alt="Avatar" class="image">
+      <div class="item-name">CHECK SHIRT</div>
+      <div class="price">LKR 1250.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+
+</div>
+
+<div class="item-panel-2">
+    
+    <div class="container">
+      <img src="img/51.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="img/51.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/51.jpg" alt="Avatar" class="image" >
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/51.jpg" alt="Avatar" class="image">
+      <div class="item-name">LADIES BLOUSE</div>
+      <div class="price">LKR 1500.00</div>
+      <div class="middle">
+        <div class="text">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+
+</div>
+
+
+<div>
+    <section>
+        
+        <img src="//cdn.shopify.com/s/files/1/0020/1732/9251/files/cc-visa_66x22.gif?v=1552979283" alt="visa">
+    </section>
+<footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>Company<span>logo</span></h3>
+
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
+                    
+                    <a href="#">Blog</a>
+                
+                    <a href="#">Pricing</a>
+                
+                    <a href="#">About</a>
+                    
+                    <a href="#">Faq</a>
+                    
+                    <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name">Company Name © 2020</p>
+            </div>
+
+            <div class="footer-center">
+
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>444 S. Cedros Ave</span> Colombo 07, Sri Lanka</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+94.555.555.5555</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">support@company.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
+
+                <div class="footer-icons">
+
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+</body>
+</html>
